@@ -1,18 +1,14 @@
-<h1>Car List</h1>
-
-<p>Total button clicks: {{ clickCount }}</p> <!-- Interpolation -->
-
-<div *ngFor="let car of cars" class="car-card">
+<div class="car-card">
   <h3>{{ car.brand }} {{ car.model }}</h3>
   <p>Year: {{ car.year }}</p>
+  <p>Clicks: {{ clickCount }}</p>
 
   <!-- Property binding -->
   <img [src]="car.image" width="150">
 
-  <br><br>
-
   <!-- Event binding -->
-  <button (click)="onCarClick()" [disabled]="isButtonDisabled">
+  <button (click)="onSelectCar()" [disabled]="isButtonDisabled"
+    [style.backgroundColor]="clickCount >= 3 ? 'red' : 'green'">
     Select Car
   </button>
 </div>

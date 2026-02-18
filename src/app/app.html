@@ -1,1 +1,14 @@
-<app-car></app-car>
+<h1>Car App</h1>
+
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search cars..." />
+
+<p>Total selected cars: {{ selectedCars.length }}</p>
+
+<app-car 
+*ngFor="let c of cars"
+  [car]="c" 
+  (selected)="onCarSelected($event)">
+</app-car>
+
+<app-car-stats [cars]="selectedCars"></app-car-stats>
+س
