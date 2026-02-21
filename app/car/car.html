@@ -1,0 +1,10 @@
+<div class="car-card">
+  <h3>{{ car.brand | capitalize }} {{ car.model | capitalize }}</h3>
+  <p>Year: {{ car.year }}</p>
+  <p>Clicks: {{ clickCount }}</p>
+  <img [src]="car.image" width="150">
+  <button (click)="onSelectCar()" [disabled]="isButtonDisabled"
+    [style.backgroundColor]="clickCount >= 3 ? 'red' : 'green'">
+    Select Car
+  </button>
+</div>
